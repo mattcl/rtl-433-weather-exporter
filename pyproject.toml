@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "rtl-433-weather-exporter"
+version = "0.1.0"
+description = "A rtl-433 prometheus exporter"
+authors = ["Matt Chun-Lum <matt@questionable.engineering>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+rtl-433-weather-exporter = "rtl_433_weather_exporter.app:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+prometheus-client = "0.14.1"
+pydantic = "2.3.0"
+pydantic-settings = "2.0.3"
+structlog = "23.1.0"
+
+[tool.poetry.dev-dependencies]
+black = "23.9.0"
+pytest = "7.4.2"
+pytest-describe = "2.1.0"
+pytest-xdist = "3.3.1"
+pytest-mock = "3.11.1"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+describe_prefixes = [
+    "describe",
+    "context",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
